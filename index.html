@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="font-size: 18px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>WJ | SPACE DESIGN | 專業室內設計</title>
+    
+    <meta name="description" content="WJ | SPACE DESIGN 提供住宅設計、老屋翻新與商業空間規劃。國家考試及格設計裝修有保障。">
+    <meta property="og:title" content="WJ | SPACE DESIGN | 專業室內設計">
+    <meta property="og:description" content="刻劃生活的美學。點擊了解我們的設計流程與真實見證！">
+    <meta property="og:type" content="website">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <style>
+        :root { color-scheme: dark; --gold: #d4af37; --bg: #121212; --card: rgba(30, 30, 30, 0.9); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { font-size: 18px; scroll-behavior: smooth; }
+
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang TC', 'Microsoft JhengHei', sans-serif; 
+            background-color: var(--bg); 
+            background-image: linear-gradient(135deg, #121212 25%, #1a1a1a 100%); 
+            color: #e0e0e0; line-height: 1.8; overflow-x: hidden; 
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* 👑 手機 RWD：舒適閱讀與排列優化 👑 */
+        @media screen and (max-width: 768px) {
+            html { font-size: 16px !important; }
+            nav { padding: 10px 20px !important; }
+            .nav-links { display: none !important; }
+            .hero-content h1 { font-size: 2.5rem !important; }
+            .section-title { font-size: 1.8rem !important; margin-bottom: 40px !important; }
+            
+            .timeline-content { padding: 25px 12px !important; text-align: center !important; }
+            .timeline-content h3 { font-size: 1.25rem !important; margin-bottom: 5px !important; white-space: nowrap; }
+            .timeline-content p { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 0 !important; font-size: 1.05rem !important; opacity: 0.8; text-align: center !important; }
+            .timeline-item.active .timeline-content p { max-height: 800px; margin-top: 15px !important; }
+            .timeline-content::after { content: '▾ 展開詳情'; display: block; font-size: 0.85rem; color: var(--gold); margin-top: 8px; text-align: center; }
+            .timeline-item.active .timeline-content::after { content: '▴ 收起詳情'; }
+
+            .testimonial-container { justify-content: flex-start !important; padding-left: 20px !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+            .testimonial-card { flex: 0 0 85vw !important; width: 85vw !important; padding: 35px 20px !important; }
+            .swipe-guide { display: block !important; text-align: center; color: var(--gold); margin-top: 15px; font-size: 0.9rem; animation: swipeAnim 2s infinite; }
+
+            .contact-form { padding: 35px 20px !important; }
+            .form-row { gap: 0 !important; } 
+            .form-group { flex: 0 0 100% !important; width: 100% !important; margin-bottom: 25px !important; }
+            .form-group label { font-size: 1.2rem !important; }
+            .submit-btn { height: 75px !important; font-size: 1.3rem !important; }
+
+            .credential-footer { font-size: 0.95rem !important; white-space: nowrap !important; letter-spacing: -0.5px !important; margin-top: 35px !important; }
+            .credential-container { flex-direction: column !important; align-items: center !important; }
+            .license-card { width: 100% !important; margin-bottom: 25px !important; }
+        }
+
+        .swipe-guide { display: none; letter-spacing: 2px; }
+        @keyframes swipeAnim { 0%, 100% { transform: translateX(0); opacity: 0.6; } 50% { transform: translateX(10px); opacity: 1; } }
+
+        @media screen and (min-width: 769px) {
+            body { cursor: none; }
+            button, a, input, select, textarea, .faq-btn, .license-card { cursor: none; }
+            .custom-cursor { position: fixed; top: 0; left: 0; width: 20px; height: 20px; border: 2px solid rgba(212, 175, 55, 0.8); border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); transition: width 0.25s, height 0.25s; }
+            .custom-cursor.hovered { width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); }
+        }
+
+        nav { position: fixed; top: 0; width: 100%; background: rgba(18, 18, 18, 0.95); box-shadow: 0 4px 30px rgba(0,0,0,0.7); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; backdrop-filter: blur(15px); }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.5rem; color: #fff; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-size: 1rem; color: #bbb; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        section { padding: 120px 20px; max-width: 1100px; margin: 0 auto; width: 100%; position: relative; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 70px; color: #fff; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--gold); margin: 25px auto 0; }
+
+        header { height: 100vh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; }
+        header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); }
+        .hero-content { position: relative; z-index: 1; padding: 20px; }
+        .hero-content h1 { font-size: 4.5rem; letter-spacing: 5px; font-weight: 300; }
+        .quiz-btn { display: inline-flex; align-items: center; justify-content: center; gap: 15px; padding: 18px 45px; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-size: 1.25rem; border-radius: 60px; cursor: pointer; transition: 0.4s; font-weight: 600; margin-top: 40px; }
+        .quiz-btn:hover { background: var(--gold); color: #121212; transform: translateY(-5px); }
+
+        .stats-section { background: rgba(20, 20, 20, 0.98); padding: 70px 20px; text-align: center; border-bottom: 1px solid #333; }
+        .stats-container { display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; gap: 40px; }
+        .stat-item h3 { font-size: 4.5rem; color: var(--gold); margin-bottom: 10px; font-weight: 300; }
+        .stat-item p { font-size: 1.2rem; color: #fff; }
+
+        .timeline { position: relative; padding: 20px 0; }
+        .timeline::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: rgba(212, 175, 55, 0.3); }
+        .timeline-item { display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 60px; cursor: pointer; }
+        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+        .timeline-dot { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: #121212; border: 4px solid var(--gold); border-radius: 50%; z-index: 2; box-shadow: 0 0 15px rgba(212,175,55,0.5); }
+        .timeline-content { background: var(--card); padding: 40px; border-radius: 15px; width: 95%; border: 1px solid rgba(255,255,255,0.05); }
+        .timeline-content h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.8rem; }
+
+        #testimonials { max-width: 100%; overflow: hidden; padding-left: 0; padding-right: 0; }
+        .testimonial-container { display: flex; justify-content: center; padding: 20px 0 50px 0; gap: 30px; scroll-snap-type: x mandatory; -ms-overflow-style: none; scrollbar-width: none; }
+        .testimonial-card { flex: 0 0 350px; width: 350px; scroll-snap-align: center; background: var(--card); padding: 50px 40px; border-radius: 20px; border: 1.5px solid var(--gold); box-shadow: 0 15px 35px rgba(0,0,0,0.4); position: relative; }
+        .testimonial-card::before { content: '”'; position: absolute; top: 15px; left: 20px; font-size: 6rem; color: rgba(212, 175, 55, 0.1); font-family: serif; }
+        .testimonial-text { color: var(--gold); font-size: 1.2rem; line-height: 1.9; }
+        .testimonial-author { color: #aaa; text-align: right; margin-top: 30px; font-style: italic; }
+
+        .credential-container { display: flex; gap: 40px; justify-content: center; flex-wrap: nowrap; }
+        .license-card { flex: 1; max-width: 500px; background: var(--card); padding: 50px 40px; border-radius: 20px; border: 1px solid rgba(212,175,55,0.3); text-align: center; transition: 0.3s; transform-style: preserve-3d; }
+        .license-number-box { background: rgba(0,0,0,0.7); padding: 18px; border-radius: 12px; margin-top: 30px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212,175,55,0.4); font-family: 'Courier New', monospace; font-size: 1.3rem; }
+
+        .faq-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .faq-item { background: var(--card); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); overflow: hidden; }
+        .faq-btn { width: 100%; text-align: left; padding: 28px 35px; background: none; border: none; color: #eee; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; font-size: 1.35rem; font-weight: 600; }
+        .faq-btn::after { content: '+'; font-size: 1.8rem; color: var(--gold); transition: 0.3s; }
+        .faq-item.active .faq-btn::after { transform: rotate(45deg); }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: rgba(0,0,0,0.25); }
+        .faq-content p { padding: 30px 40px 45px; color: #e5c355; line-height: 2; font-size: 1.15rem; min-height: 180px; }
+
+        .contact-form { background: var(--card); padding: 70px; border-radius: 25px; border: 1px solid #333; max-width: 1000px; margin: 0 auto; box-shadow: 0 40px 80px rgba(0,0,0,0.7); }
+        .form-row { display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; }
+        .form-group { flex: 1; min-width: 280px; display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 12px; color: #ddd; font-weight: 500; font-size: 1.1rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 20px; background: #1a1a1a; border: 1.5px solid #444; color: #fff; border-radius: 12px; font-family: inherit; font-size: 1.1rem; }
+        .submit-btn { width: 100%; height: 75px; background: var(--gold); color: #121212; border: none; border-radius: 12px; font-size: 1.4rem; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 20000; justify-content: center; align-items: center; backdrop-filter: blur(15px); }
+        .quiz-box { background: #1e1e1e; width: 90%; max-width: 650px; padding: 60px; border-radius: 25px; border: 1px solid #444; text-align: center; position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-quiz { position: absolute; top: 20px; right: 25px; font-size: 3rem; color: #888; cursor: pointer; }
+        .quiz-opt-btn { width: 100%; padding: 20px; background: #2a2a2a; border: 1px solid #555; color: #ddd; border-radius: 15px; margin-bottom: 15px; cursor: pointer; font-size: 1.2rem; text-align: left; transition: 0.3s; }
+        .quiz-opt-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+        #music-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: rgba(30,30,30,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1001; border: 1px solid #444; cursor: pointer; font-size: 1.5rem; }
+        #line-fab { position: fixed; bottom: 30px; right: 30px; width: 75px; height: 75px; z-index: 1001; cursor: pointer; }
+        #toast { visibility: hidden; background: var(--gold); color: #000; padding: 20px 40px; position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%); border-radius: 10px; z-index: 21000; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <nav id="navbar">
+        <div class="logo">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#d4af37" stroke-width="6" style="width: 45px; height: 45px; margin-right: 10px;">
+                <path d="M 15,30 L 35,80 M 35,80 L 50,45 M 50,45 L 65,80 M 65,80 L 85,30"></path>
+                <path d="M 50,45 L 50,85 C 50,98 25,98 25,87"></path> 
+            </svg>
+            <span>WJ | SPACE DESIGN</span>
+        </div>
+        <div class="nav-links">
+            <a href="#timeline">流程</a><a href="#testimonials">見證</a><a href="#credentials">團隊</a><a href="#faq">問答</a><a href="#contact">預約</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content" data-aos="zoom-in">
+            <h1>刻劃生活的美學</h1>
+            <button class="quiz-btn" onclick="openQuiz()">
+                <svg viewBox="0 0 24 24" style="width:30px; fill:currentColor; margin-right:10px;"><path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"></path></svg>
+                尋找我的命定風格
+            </button>
+        </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item"><h3 class="counter" data-target="15">0</h3><p>年 業界設計裝修經驗</p></div>
+            <div class="stat-item"><h3 class="counter" data-target="250">0</h3><p>件 年度完工經典案例</p></div>
+            <div class="stat-item"><h3><span class="counter" data-target="98">0</span>%</h3><p>客戶滿意真實好評</p></div>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <h2 class="section-title" data-aos="fade-up">安心施工流程</h2>
+        <div class="timeline">
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>01. 保護拆除</h3><p>從正式開工前的現場精密勘查開始，我們展現對細節的追求。精準拆除不僅是破壞，更是為了美學的重塑；我們同步執行高規格公設防護工程，確保梯廳與電梯無損，維持鄰里和諧關係。</p></div></div>
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>02. 泥作水電</h3><p>泥作與水電重置是居住品質的骨幹。我們指派具備國家技術士證照師傅，精確配置耐用管線與智慧電力迴路，從源頭解決老屋老化隱憂。施作多道防水，打下最紮實的安全地基。</p></div></div>
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>03. 木作空調</h3><p>木作工程與空調機電配置緊密銜接，確立空間輪廓。管理人員全程控管細節，執行隱藏式空調主機設置與天花板造型施工。透過職人手藝確保牆面垂直與美學平整，打造舒適基礎環境。</p></div></div>
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>04. 油漆系統櫃</h3><p>職人手工上漆與收納美學進場，標誌質感的升華。執行繁瑣三底兩面噴漆，呈現完美飽和度。搭配量身定做的強大系統櫃，不僅滿足收納需求，更將高品質材質與溫潤手感融入生活。</p></div></div>
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>05. 完工點交</h3><p>在最後驗收階段，陪同屋主逐一進行最詳盡品質檢查與機能測試。從電壓、排水到櫃體五金順滑感，不放過任何细节。完成微調後我們安心交付夢想居所，提供完整維護保固。開啟您的美學新生活。</p></div></div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2 class="section-title" data-aos="fade-up">客戶真實見證</h2>
+        <div class="testimonial-container" id="slider">
+            <div class="testimonial-card"><p class="testimonial-text">原本以為二十多年老屋翻新會是噩夢，但WJ團隊展現了極高專業度。最後成果完全超出預期，空間變明亮開闊，採光動線貼心極了，這場翻新冒險變成了最美驚喜！</p><div class="testimonial-author">— 台北 林先生與太太</div></div>
+            <div class="testimonial-card"><p class="testimonial-text">身為對於結構與細節極度龜毛的電子工程師，我看重施工的嚴謹度。這家的工程管理證照掛保證，水電管線走位極其整齊漂亮，宛如藝術品般規律。紮實工法讓我們住進去後完全無後顧之憂。</p><div class="testimonial-author">— 新竹 張先生</div></div>
+            <div class="testimonial-card"><p class="testimonial-text">預算相當緊湊，本來擔心會被敷衍，沒想到WJ團隊沒輕視需求。設計師誠意十足地幫我們在建材上優化替代，將預算精準花在刀口上，打造出頂級質感。最強 C/P 值實至名歸！</p><div class="testimonial-author">— 桃園 吳小姐</div></div>
+        </div>
+        <div class="swipe-guide">左右滑動查看更多見證 ◄ ►</div>
+    </section>
+
+    <section id="credentials">
+        <h2 class="section-title" data-aos="fade-up">專業資質</h2>
+        <div class="credential-container">
+            <div class="license-card">
+                <span style="font-size:3.5rem;">📜</span> <h3>建築物室內設計</h3>
+                <p>國家考試及格，專業空間美學規劃與視覺提案。</p>
+                <div class="license-number-box">編號：125-0011379</div>
+            </div>
+            <div class="license-card">
+                <span style="font-size:3.5rem;">🛠️</span> <h3>室內裝修工程管理</h3>
+                <p>嚴謹工地現場監工，把關每一處品質與施工進度。</p>
+                <div class="license-number-box">編號：126-0025149</div>
+            </div>
+        </div>
+        <p class="credential-footer" style="text-align:center; margin-top:50px; font-size:1.3rem; color:var(--gold); font-weight:bold;">「 國家考試及格，設計裝修有保障！ 」</p>
+    </section>
+
+    <section id="faq">
+        <h2 class="section-title" data-aos="fade-up">常見問答</h2>
+        <div class="faq-container">
+            <div class="faq-item" data-answer="我們主要立足北台灣，目前服務地區涵蓋基隆市、大台北地區、桃園以及新竹縣市。為了確保工程品質與售後服務的即時性，我們會指派專屬人員全程負責。致力於將美學帶入家園，成就您的居家藍圖，是我們不變的承諾。">
+                <button class="faq-btn">請問服務範圍涵蓋哪些地區？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+            <div class="faq-item" data-answer="流程從初步洽談、丈量開始，進行平面配置 Proposal 討論。在確認意向後，我們會簽訂設計約並產出 3D 透視圖與全套施工藍圖。在確認預算報價單後進入工程施作，期間會有專職管理人員監督，最後通過細緻手續，確保每個細節都符合期待。">
+                <button class="faq-btn">室內設計的整體服務流程是如何？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+            <div class="faq-item" data-answer="我們秉持透明公平原則。計費依照坪數計算，工程款則依進度分期收取。初次現場丈量與平面建議皆為完全免費服務，目的讓您在做重大決定前有充分了解與信心。我們絕無隱藏費用，發揮預算最大坪效。">
+                <button class="faq-btn">設計費與工程款如何計費？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+            <div class="faq-item" data-answer="請放心！為了讓屋主能安心專注忙碌日常，我們提供全方位專業監工代管服務。每一個工程現場都會指派具備證照的人員全程把關施工品質。此外，我們會在專屬 LINE 群組內每日定時回報當天施工照片與影片報告，讓您即便不出門也能掌握進展。">
+                <button class="faq-btn">裝潢期間需要我親自去現場監工嗎？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+            <div class="faq-item" data-answer="工期會依據屋況新舊與設計複雜度而異。一般而言，新成屋約需 1.5 至 2.5 個月。若是二十年以上老屋翻新，涉及拆除與管線重拉，建議預留 3.5 至 4.5 個月的施工時間。好的品質值得細心雕琢，我們將提供精確進度表。">
+                <button class="faq-btn">一般裝潢工程預計需要預留多少時間？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+            <div class="faq-item" data-answer="是的，我們對工程品質有絕對信心。從完工點交交付日起算，我們提供為期一年的「全室工程保固服務」。在保固期間內若發生任何非人為損壞，只需透過客服反映，我們將迅速指派原班師傅到府免費修復。保固期過後依然提供永久居家維護諮詢。">
+                <button class="faq-btn">完工點交後，有提供售後保固服務嗎？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+            <div class="faq-item" data-answer="完全沒問題！除了全室翻新，也歡迎預售屋的「客變設計服務」，協助您依生活習慣優化格局。針對單一空間局部裝修，我們會視工程排程評估。只要能在確保品質前提下，任何能提升幸福感的案件我們都願意竭誠服務。">
+                <button class="faq-btn">有承接局部裝修或預售屋客變設計嗎？</button>
+                <div class="faq-content"><p class="typed-text"></p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title" data-aos="fade-up">預約諮詢</h2>
+        <div class="contact-form">
+            <form id="consultForm" novalidate="">
+                <input type="hidden" name="access_key" value="c64cca8d-86f5-4366-9556-c11ebac2cf3f">
+                <input type="hidden" name="subject" value="來自 WJ 官網的新客戶諮詢">
+                <input type="hidden" name="from_name" value="WJ 空間設計助手">
+
+                <div class="form-row">
+                    <div class="form-group"><label>您的姓名 *</label><input type="text" name="姓名" required=""></div>
+                    <div class="form-group"><label>稱謂 *</label>
+                        <select name="稱謂" required=""><option value="" disabled="" selected="">請選擇</option><option>先生</option><option>小姐</option></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>聯絡電話 *</label><input type="tel" id="phone" name="電話" required="" maxlength="10" placeholder="09xxxxxxxx"></div>
+                    <div class="form-group"><label>電子信箱</label><input type="email" name="Email" placeholder="name@email.com"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>房屋類型 *</label>
+                        <select name="房屋類型" required=""><option value="" disabled="" selected="">房型選擇</option><option>新成屋</option><option>中古屋翻新</option><option>預售屋客變</option><option>商業空間</option></select>
+                    </div>
+                    <div class="form-group"><label>室內坪數 *</label><input type="number" name="坪數" required="" placeholder="大約坪數"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>裝潢預算 *</label>
+                        <select name="裝潢預算" required="">
+                            <option value="" disabled="" selected="">預算範圍</option>
+                            <option>100萬以下</option><option>100萬-300萬</option><option>300萬-500萬</option>
+                            <option>500萬-800萬</option><option>800萬-1200萬</option><option>1200萬-1500萬</option>
+                            <option>1500萬以上</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>預計完工日期 *</label><input type="date" name="日期" required=""></div>
+                </div>
+                <div class="form-group full-width" style="margin-bottom:30px;">
+                    <label>需求簡述 *</label>
+                    <textarea name="需求" id="demandBox" rows="4" required="" placeholder="請簡單描述成員、風格偏好... (禁止髒話)"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="submit-btn">確認送出正式表單</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="quizModal">
+        <div class="quiz-box">
+            <span class="close-quiz" onclick="closeQuiz()">×</span>
+            <div id="quiz-q-container">
+                <h3 id="q-title" style="color:var(--gold); margin-bottom:25px;">風格小測驗 (1/7)</h3>
+                <div id="q-text" style="font-size:1.4rem; margin-bottom:30px; color:#fff;">問卷載入中...</div>
+                <div id="q-opts"></div>
+            </div>
+            <div id="quiz-result-container" style="display:none;">
+                <h3 style="color:var(--gold);">您的命定風格是</h3>
+                <h2 id="res-style" style="font-size:2.5rem; margin:25px 0; color:#fff;">風格名稱</h2>
+                <button class="submit-btn" style="width:auto; padding:0 50px;" onclick="applyToForm()">將此風格帶入預約</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop="" src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3"></audio>
+    <div id="music-btn">🎵</div>
+    <div id="line-fab" onclick="openLine()"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="Line" style="width:100%;"></div>
+    <div id="toast">表單已成功送出！設計師會盡快聯絡。</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+        const music = document.getElementById('bgMusic');
+        const mBtn = document.getElementById('music-btn');
+        let playing = false;
+
+        function openLine() {
+            if (playing) { music.pause(); mBtn.classList.remove('playing'); playing = false; }
+            window.open('https://line.me/ti/p/onSlhA-t0x', '_blank');
+        }
+
+        function toggleTimeline(el) {
+            if (window.innerWidth <= 768) {
+                const isActive = el.classList.contains('active');
+                document.querySelectorAll('.timeline-item').forEach(item => item.classList.remove('active'));
+                if (!isActive) el.classList.add('active');
+            }
+        }
+
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(c => {
+            const target = +c.dataset.target;
+            const update = () => {
+                const count = +c.innerText;
+                if(count < target) { c.innerText = Math.ceil(count + (target/50)); setTimeout(update, 25); }
+                else { c.innerText = target; }
+            };
+            update();
+        });
+
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.onclick = () => {
+                const item = btn.parentElement;
+                const ans = item.getAttribute('data-answer');
+                const textContainer = item.querySelector('.typed-text');
+                if(item.classList.contains('active')){ item.classList.remove('active'); item.querySelector('.faq-content').style.maxHeight=null; return; }
+                document.querySelectorAll('.faq-item').forEach(o => { o.classList.remove('active'); o.querySelector('.faq-content').style.maxHeight=null; });
+                item.classList.add('active');
+                textContainer.innerText = "";
+                item.querySelector('.faq-content').style.maxHeight = "500px";
+                let i=0; function type() { if(i < ans.length){ textContainer.innerText += ans.charAt(i); i++; setTimeout(type, 12); } }
+                setTimeout(type, 300);
+            };
+        });
+
+        const quizData = [
+            { q: "週末午後放鬆，您最偏好哪種情境？", opts: ["窩在沙發享受陽光與熱茶", "在簡潔的中島吧台品嚐黑咖啡", "在寧靜角落打坐閱讀", "邀友喝精釀啤酒聽音樂"], res: ["北歐暖木", "現代極簡", "日式侘寂", "個性工業"] },
+            { q: "您對空間色調的第一直覺是？", opts: ["米白與溫柔奶茶色", "黑、白、深灰無彩色", "復古磚紅與水泥色", "莫蘭迪灰與大理石"], res: ["韓系奶油", "現代極簡", "摩登復古", "法式輕奢"] },
+            { q: "若挑選一件重點家具，您會選？", opts: ["蓬鬆柔軟的大布沙發", "具設計感的幾何單椅", "具禪意的枯枝花藝", "黃銅質感的造型吊燈"], res: ["北歐暖木", "現代極簡", "日式侘寂", "法式輕奢"] },
+            { q: "您希望收納空間如何規劃？", opts: ["實用整齊的系統櫃", "隱藏得一點都看不見", "開放式陳列收藏", "帶有線條感的門片"], res: ["北歐暖木", "現代極簡", "個性工業", "法式輕奢"] },
+            { q: "對於牆面材質，您最抗拒不了？", opts: ["溫潤特殊塗料", "冷冽清水模或紅磚", "細緻大理石或金屬", "自然實木拼接"], res: ["韓系奶油", "個性工業", "現代奢華", "北歐暖木"] },
+            { q: "燈光氛圍對您來說？", opts: ["明亮自然的採光", "神祕個性的重點光", "優雅水晶吊燈光", "溫馨暖光落地燈"], res: ["現代極簡", "個性工業", "法式輕奢", "北歐暖木"] },
+            { q: "夢想居家感覺是？", opts: ["像藝廊純淨", "咖啡廳放鬆", "像飯店精緻大器", "森林充滿生機"], res: ["現代極簡", "北歐暖木", "現代奢華", "日式侘寂"] }
+        ];
+        let curQ = 0; let styleScores = {};
+        function openQuiz() { document.getElementById('quizModal').style.display='flex'; curQ=0; styleScores={}; showQ(); }
+        function closeQuiz() { document.getElementById('quizModal').style.display='none'; }
+        function showQ() {
+            document.getElementById('q-title').innerText = `風格小測驗 (${curQ+1}/7)`;
+            document.getElementById('q-text').innerText = quizData[curQ].q;
+            const area = document.getElementById('q-opts'); area.innerHTML = "";
+            quizData[curQ].opts.forEach((o, i) => {
+                const b = document.createElement('button'); b.className="quiz-opt-btn"; b.innerText=o;
+                b.onclick=()=> { styleScores[quizData[curQ].res[i]] = (styleScores[quizData[curQ].res[i]] || 0) + 1; curQ++; if(curQ < 7) showQ(); else showRes(); };
+                area.appendChild(b);
+            });
+        }
+        function showRes() {
+            document.getElementById('quiz-q-container').style.display='none';
+            document.getElementById('quiz-result-container').style.display='block';
+            const topStyle = Object.keys(styleScores).reduce((a, b) => styleScores[a] > styleScores[b] ? a : b);
+            document.getElementById('res-style').innerText = topStyle;
+        }
+        function applyToForm() {
+            document.getElementById('demandBox').value = `測驗結果為「${document.getElementById('res-style').innerText}」風格，想進一步討論需求！`;
+            closeQuiz(); document.getElementById('contact').scrollIntoView();
+        }
+
+        const cursor = document.getElementById('cursor');
+        document.onmousemove = (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; };
+        document.querySelectorAll('button, a, input, select, textarea').forEach(el => {
+            el.onmouseenter = () => cursor.classList.add('hovered');
+            el.onmouseleave = () => cursor.classList.remove('hovered');
+        });
+
+        const slider = document.getElementById('slider');
+        let isDown = false; let sX; let sL;
+        slider.onmousedown = (e) => { isDown = true; sX = e.pageX - slider.offsetLeft; sL = slider.scrollLeft; };
+        slider.onmouseleave = () => isDown = false;
+        slider.onmouseup = () => isDown = false;
+        slider.onmousemove = (e) => { if(!isDown) return; e.preventDefault(); const walk = (e.pageX - slider.offsetLeft - sX) * 2; slider.scrollLeft = sL - walk; };
+
+        document.getElementById('consultForm').onsubmit = function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value;
+            const content = this.需求.value;
+            const badWords = ['幹', '靠北', '垃圾', 'fuck', 'shit'];
+
+            if(phone.length < 9) { alert('電話號碼不正確！'); return; }
+            if(badWords.some(w => content.includes(w))) { alert('內容包含不雅字眼，請修正，夥伴。'); return; }
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true; 
+            btn.innerText = '用心加密發送中...';
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    document.getElementById('toast').classList.add('show');
+                    setTimeout(() => document.getElementById('toast').classList.remove('show'), 4000);
+                    this.reset();
+                } else {
+                    alert("發送失敗：" + json.message);
+                }
+            })
+            .catch(error => {
+                alert("連線發生錯誤，請稍後再試。");
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.innerText = '確認送出正式表單';
+            });
+        };
+
+        document.addEventListener('click', () => { if(!playing){music.play(); playing=true; mBtn.classList.add('playing');} }, {once:true});
+        mBtn.onclick = (e) => { e.stopPropagation(); if(playing){music.pause(); mBtn.classList.remove('playing');} else {music.play(); mBtn.classList.add('playing');} playing = !playing; };
+    </script>
+</body>
+</html>

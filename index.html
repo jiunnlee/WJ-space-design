@@ -25,7 +25,6 @@
         }
         a { text-decoration: none; color: inherit; }
 
-        /* 👑 修正後的手機 RWD 👑 */
         @media screen and (max-width: 768px) {
             html { font-size: 16px !important; }
             nav { padding: 10px 20px !important; }
@@ -33,7 +32,6 @@
             .hero-content h1 { font-size: 2.5rem !important; }
             .section-title { font-size: 1.8rem !important; margin-bottom: 40px !important; }
             
-            /* 施工流程優化 */
             .timeline-content { padding: 22px 12px !important; text-align: center !important; }
             .timeline-content h3 { font-size: 1.2rem !important; margin-bottom: 5px !important; white-space: nowrap; }
             .timeline-content p { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; font-size: 1rem !important; opacity: 0.8; text-align: center !important; }
@@ -41,25 +39,14 @@
             .timeline-content::after { content: '▾ 展開詳情'; display: block; font-size: 0.8rem; color: var(--gold); margin-top: 8px; text-align: center; }
             .timeline-item.active .timeline-content::after { content: '▴ 收起詳情'; }
 
-            /* 客戶見證 */
             .testimonial-container { justify-content: flex-start !important; padding-left: 20px !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
             .testimonial-card { flex: 0 0 85vw !important; width: 85vw !important; padding: 30px 20px !important; }
             .swipe-guide { display: block !important; text-align: center; color: var(--gold); margin-top: 15px; font-size: 0.9rem; animation: swipeAnim 2s infinite; }
             
-            /* 👑 專業資質手機版：強制垂直排列 👑 */
-            .credential-container { 
-                flex-direction: column !important; 
-                align-items: center !important; 
-                gap: 25px !important;
-            }
-            .license-card { 
-                width: 100% !important; 
-                max-width: 100% !important; 
-                flex: none !important;
-            }
+            .credential-container { flex-direction: column !important; align-items: center !important; gap: 25px !important; }
+            .license-card { width: 100% !important; max-width: 100% !important; flex: none !important; }
             .credential-footer { font-size: 0.92rem !important; white-space: nowrap !important; letter-spacing: -0.5px !important; margin-top: 35px !important; }
 
-            /* 表單校準 */
             .contact-form { padding: 35px 20px !important; }
             .form-row { gap: 0 !important; } 
             .form-group { flex: 0 0 100% !important; width: 100% !important; margin-bottom: 25px !important; }
@@ -76,7 +63,6 @@
             .custom-cursor.hovered { width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); }
         }
 
-        /* 穩定排版組件 */
         nav { position: fixed; top: 0; width: 100%; background: rgba(18, 18, 18, 0.95); box-shadow: 0 4px 30px rgba(0,0,0,0.7); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; backdrop-filter: blur(15px); }
         .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.5rem; color: #fff; }
         .nav-links { display: flex; gap: 30px; }
@@ -90,7 +76,7 @@
         header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); }
         .hero-content { position: relative; z-index: 1; padding: 20px; }
         .hero-content h1 { font-size: 4.5rem; letter-spacing: 5px; font-weight: 300; }
-        .quiz-btn { display: inline-flex; align-items: center; justify-content: center; gap: 15px; padding: 18px 45px; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-size: 1.3rem; border-radius: 60px; cursor: pointer; transition: 0.4s; font-weight: 600; margin-top: 40px; }
+        .quiz-btn { display: inline-flex; align-items: center; justify-content: center; gap: 15px; padding: 18px 45px; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-size: 1.25rem; border-radius: 60px; cursor: pointer; transition: 0.4s; font-weight: 600; margin-top: 40px; }
         .quiz-btn:hover { background: var(--gold); color: #121212; transform: translateY(-5px); }
 
         .stats-section { background: rgba(20, 20, 20, 0.98); padding: 70px 20px; text-align: center; border-bottom: 1px solid #333; }
@@ -112,7 +98,6 @@
         .testimonial-text { color: var(--gold); font-size: 1.2rem; line-height: 1.9; }
         .testimonial-author { color: #aaa; text-align: right; margin-top: 30px; font-style: italic; }
 
-        /* 電腦版證照：並排佈局 */
         .credential-container { display: flex; gap: 40px; justify-content: center; flex-wrap: nowrap; }
         .license-card { flex: 1; max-width: 500px; background: var(--card); padding: 55px 45px; border-radius: 25px; border: 1px solid rgba(212,175,55,0.3); text-align: center; transition: 0.3s; transform-style: preserve-3d; }
         .license-number-box { background: rgba(0,0,0,0.7); padding: 18px; border-radius: 12px; margin-top: 30px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212,175,55,0.4); font-family: 'Courier New', monospace; font-size: 1.3rem; }
@@ -181,10 +166,10 @@
     <section id="timeline">
         <h2 class="section-title" data-aos="fade-up">安心施工流程</h2>
         <div class="timeline">
-            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>01. 保護拆除</h3><p>從正式開工前的現場精密勘查開始，我們展現對細節的極致追求。精準拆除不僅是破壞，更是為了後續美學的精緻重塑；我們同步執行最高規格的公共設施防護工程，確保大樓梯廳、走道與電梯在搬運過程中完好無損，並維護環境清潔，維持和諧的鄰里關係。</p></div></div>
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>01. 保護拆除</h3><p>從正式開工前的現場精密勘查開始，我們展現對細節的極致追求。精準拆除不僅是破壞，更是為了後續美學的精緻重塑；我們同步執行最高規格的公共設施防護工程，確保大樓梯廳、走道與電梯在搬運過程中完好無損，並維護環境清潔。</p></div></div>
             <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>02. 泥作水電</h3><p>泥作與水電重置是空間安全的老骨幹工程，也是決定居住品質的關鍵。我們指派具備國家技術士證照的師傅，精確配置耐用管線與智慧電力迴路，從源頭解決老屋漏水與用電負載隱憂。同步施作多道防水工程，重塑穩固地基，確保二十年以上居住穩定度。</p></div></div>
             <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>03. 木作空調</h3><p>木作工程與空調機電配置緊密銜接，為未來的室內空間確立機能輪廓。我們指派專屬工程管理人員全程控管施工細節，精確執行隱藏式空調主機設置、天花板造型施工與客製化隔間。透過職人手藝確保牆面垂直與美學平整，打造出舒適且兼具設計感的基礎環境。</p></div></div>
-            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>04. 油漆系統櫃</h3><p>職人手工上漆與收納美學進場，標誌著空間質感的升華。我們執行三底兩面等多道繁瑣工序，細緻批土與純手工噴漆，呈現完美色彩飽和度。搭配量身定做的強大系統櫃體安裝，不僅滿足多樣化收納需求，更將高品質環保材質與溫潤手感完美融入生活。</p></div></div>
+            <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>04. 油漆系統櫃</h3><p>職人手工上漆與收納美學進場，標誌著空間質感的升華。我們執行三底兩面等多道繁瑣工序，細緻批土與純手工噴漆，呈現完美無瑕的色彩飽和度。搭配量身定做的強大系統櫃體安裝，不僅滿足多樣化收納需求，更將高品質環保材質與溫潤手感完美融入生活。</p></div></div>
             <div class="timeline-item" onclick="toggleTimeline(this)"><div class="timeline-dot"></div><div class="timeline-content"><h3>05. 完工點交</h3><p>在最後的繁複驗收階段，我們陪同屋主逐一進行最詳盡的品質檢查與機能測試。從插座電壓、排水流暢度到櫃體五金的順滑感，不放過任何一處細部。完成所有微調後，我們會安心將夢想家園交付予您，同步提供維護手冊與保固說明。這不僅是工程結束，更是生活的開始。</p></div></div>
         </div>
     </section>
@@ -193,15 +178,15 @@
         <h2 class="section-title" data-aos="fade-up">客戶真實見證</h2>
         <div class="testimonial-container" id="slider">
             <div class="testimonial-card">
-                <p class="testimonial-text">原本以為二十多年老屋翻新會是一場噩夢，但WJ團隊在初次溝通就展現了極高的專業度，不僅詳細解釋了水電重拉的必要性，更在施工中每日回報進度。最後成果完全超出我們預期，空間變明亮開闊，採光動線貼心極了，這場翻新冒險變成了最美驚喜！</p>
+                <p class="testimonial-text">原本以為二十多年老屋翻新會是一場噩夢，但WJ團隊在初次溝通就展現了極高的專業度，不僅詳細解釋了水電重拉的必要性，更在施工過程中每日回報進度。最後成果完全超出我們預期，空間變明亮開闊，採光動線貼心極了。</p>
                 <div class="testimonial-author">— 台北 林先生與太太</div>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">身為對於結構與細節極度龜毛的電子工程師，我看重施工的科學嚴謹度。這家的工程管理證照真的不是掛假的，現場水電管線的走位極其整齊漂亮，宛如藝術品般規律，這在裝潢界真的非常罕見。視覺美感達標且紮實的工法讓我們住進去後完全無後顧之憂。</p>
+                <p class="testimonial-text">身為對於結構與細節極度龜毛的電子工程師，我看重施工的科學嚴謹度。這家設計公司的工程管理證照真的不是掛假的，現場水電管線的走位極其整齊漂亮，宛如藝術品般規律，這在裝潢界真的非常罕見。住進去完全無後顧之憂。</p>
                 <div class="testimonial-author">— 新竹 張先生</div>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">預算相當緊湊，本來擔心會被敷衍了事，沒想到設計師誠意十足地幫我們在建材上進行優化替代，將預算精準花在刀口上，用系統櫃與局部木作打造出超越飯店的頂級質感。最強的 C/P 值實至名歸，真心推薦給每一位重視質感與預算平衡的小資族！</p>
+                <p class="testimonial-text">我們當時預算相當緊湊，本來擔心會被敷衍了事，沒想到WJ完全沒有輕視我們的需求。設計師誠意十足地幫我們在建材上進行優化替代，將預算精準花在刀口上，打造出頂級質感。最強的 C/P 值實至名歸，真心推薦！</p>
                 <div class="testimonial-author">— 桃園 吳小姐</div>
             </div>
         </div>
@@ -214,12 +199,12 @@
             <div class="license-card">
                 <span style="font-size:3.5rem;">📜</span> <h3>建築物室內設計</h3>
                 <p>國家考試及格，專業空間美學規劃與精準視覺提案。</p>
-                <div class="license-number-box">技術士證編號：125-0011379</div>
+                <div class="license-number-box">編號：125-0011379</div>
             </div>
             <div class="license-card">
                 <span style="font-size:3.5rem;">🛠️</span> <h3>室內裝修工程管理</h3>
                 <p>嚴謹工地現場監工，把關每一處施工細節與進度品質。</p>
-                <div class="license-number-box">技術士證編號：126-0025149</div>
+                <div class="license-number-box">編號：126-0025149</div>
             </div>
         </div>
         <p class="credential-footer" style="text-align:center; margin-top:50px; font-size:1.3rem; color:var(--gold); font-weight:bold;">「 國家考試及格，設計裝修有保障！ 」</p>
@@ -228,31 +213,31 @@
     <section id="faq">
         <h2 class="section-title" data-aos="fade-up">常見問答</h2>
         <div class="faq-container">
-            <div class="faq-item" data-answer="我們深耕於北台灣多年，目前的專業服務範圍主要涵蓋基隆、大台北地區、桃園市以及新竹縣市。為了確保每一項工程都能獲得最高質量的現場監控與售後維修的即時性，我們會指派專屬管理人員在服務區域內全程駐點負責。無論是都會精品宅或是新竹溫馨屋，我們團隊都能為您提供最專業服務。">
+            <div class="faq-item" data-answer="我們深耕於北台灣多年，目前的專業服務範圍主要涵蓋基隆、大台北地區、桃園市以及新竹縣市。為了確保每一項工程都能獲得最高質量的現場監控與售後維修的即時性，我們會指派專屬管理人員在服務區域內全程駐點負責。無論是都會精品宅或是新竹科技溫馨屋，只要在服務區域內，我們專業團隊都能為您提供最專業服務。">
                 <button class="faq-btn">請問服務範圍涵蓋哪些地區？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
-            <div class="faq-item" data-answer="室內設計是細膩的溝通實踐過程。流程從初步洽談、現場丈量開始，進行平面 Proposals 討論並簽訂合約。確認設計後，我們會提供精緻的 3D 透視圖與施工藍圖。在確認報價後進入正式施作階段，期間會有專職工程管理監督，最後通過驗收與點交手續，確保每個細節符合期待。">
+            <div class="faq-item" data-answer="室內設計是細膩的溝通實踐過程。流程從初步洽談、丈量開始，進行平面 Proposals 討論並簽訂設計合約。確認設計後，我們提供 3D 透視圖與施工藍圖。確認預算報價後進入正式施作階段，期間會有專職工程管理監督，確保工法精確，最後通過驗收與點交手續，確保每個細節符合期待，讓裝修成為一種享受。">
                 <button class="faq-btn">室內設計的整體服務流程是如何？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
-            <div class="faq-item" data-answer="我們秉持透明公平的原則，計費分為「設計費」與「工程款」兩大部分。設計費依照實際坪數計算，工程款則依據雙方簽署的詳細估價單，配合工程進度分期收取。初次現場丈量與平面建議皆為完全免費服務，目的讓您在做決定前有最充分的了解。我們絕無隱藏費用，發揮預算最大坪效。">
+            <div class="faq-item" data-answer="我們秉持透明公平原則。計費分為「設計費」與「工程款」兩大部分。設計費依照實際坪數計算，工程款則依據詳細估價單，配合工程進度分期收取。初次現場丈量與建議皆為完全免費服務，目的讓您在做決定前有最充分的了解。我們絕無隱藏費用，每一筆支出都將詳列於合約中，發揮預算最大坪效。">
                 <button class="faq-btn">設計費與工程款如何計費？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
-            <div class="faq-item" data-answer="請您儘管放心，為了讓屋主能安心專注於忙碌日常，我們提供全方位專業監工代管。每個現場都會指派具備證照的專業人員全程把關。此外，我們會在專屬 LINE 群組內定時回報當天進度，分享現場即時照片與影音報告，讓您即便不出門也能隨時掌握新家的蛻變過程，不必親自奔波辛勞。">
+            <div class="faq-item" data-answer="請您儘管放心，為了讓屋主能安心專注於忙碌日常，我們提供全方位專業監工。每個現場都會指派具備國家證照人員全程把關施工品質。此外，我們會在專屬 LINE 群組內回報當天進度，分享現場即時照片，讓您即便不出門也能隨時掌握新家的蛻變過程，不必親自奔波辛勞，由專業團隊為您成就高品質家園。">
                 <button class="faq-btn">裝潢期間需要我親自去現場監工嗎？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
-            <div class="faq-item" data-answer="裝潢工期會依據屋況新舊與設計複雜度而異。一般而言，新成屋在無大幅格局變動情況下，施工期約需 1.5 至 2.5 個月。若是老屋翻新，涉及拆除、水電全數重拉與泥作修復等工程，建議預留 3.5 至 4.5 個月的完整施工時間。好的品質值得雕琢，開工前我們會提供精確的工程進度表供您規劃。">
+            <div class="faq-item" data-answer="裝潢工期會依據屋況新舊與設計複雜度而異。一般而言，新成屋施工期約需 1.5 至 2.5 個月。若是中古屋或老屋翻新，涉及拆除、水電全數重拉與泥作修復等核心工程，建議預留 3.5 至 4.5 個月施工時間。好的設計值得細心雕琢，我們會在開工前提供精確的工程進度表供您規劃。">
                 <button class="faq-btn">一般裝潢工程預計需要預留多少時間？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
-            <div class="faq-item" data-answer="是的，我們對自己的工程品質有絕對信心。在完工點交交付日起算，我們提供為期一年的「全室工程保固服務」。保固期間內若發生非人為損壞，只需透過客服反映，我們將迅速指派原班師傅到府免費修復。保固期過後，我們依然提供永久的維護諮詢服務。點交不是結束，而是我們承諾服務您新生活的開始。">
+            <div class="faq-item" data-answer="是的，我們對自己的工程品質有絕對信心。在完工點交交付日起算，我們提供為期一年的「全室工程保固服務」。保固期間內若發生任何非人為損壞，只需透過客服反映，我們將迅速指派原班師傅到府修復。保固期過後依然提供永久居家維護諮詢。點交不是結束，而是我們承諾服務您新生活的開始。">
                 <button class="faq-btn">完工點交後，有提供售後保固服務嗎？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
-            <div class="faq-item" data-answer="完全沒問題！除了全室翻新，我們也歡迎預售屋的「客變設計服務」，協助您依據生活習慣優化格局。針對單一空間（如單純翻新浴室或廚房）的局部裝修，我們會視工程排程與品質要求彈性評估。只要能在確保施工品質的前提下，我們都願意竭誠為您服務，歡迎預約現場勘查與由設計師提供規劃建議。">
+            <div class="faq-item" data-answer="完全沒問題！除了全室翻新，也歡迎預售屋的「客變設計服務」，協助您依生活習慣優化格局。針對單一空間（如單純翻新浴室或廚房）局部裝修，我們會視排程彈性評估。只要能在確保施工品質的前提下，任何能提升居住幸福感的案件，我們都願意竭誠為您服務，歡迎預約現場勘查與由設計師提供建議。">
                 <button class="faq-btn">有承接局部裝修或預售屋客變設計嗎？</button>
                 <div class="faq-content"><p class="typed-text"></p></div>
             </div>
@@ -296,7 +281,7 @@
                 </div>
                 <div class="form-group full-width" style="margin-bottom:30px;">
                     <label>需求簡述 *</label>
-                    <textarea name="需求" id="demandBox" rows="4" required="" placeholder="請簡單描述需求與風格偏好..."></textarea>
+                    <textarea name="需求" id="demandBox" rows="4" required="" placeholder="請描述成員、風格偏好..."></textarea>
                 </div>
                 <button type="submit" id="submitBtn" class="submit-btn">確認送出正式表單</button>
             </form>
@@ -306,7 +291,7 @@
     <div class="modal-overlay" id="quizModal">
         <div class="quiz-box">
             <span class="close-quiz" onclick="closeQuiz()">×</span>
-            <div id="quiz-q-container"><h3 id="q-title" style="color:var(--gold); margin-bottom:25px;">風格小測驗 (1/7)</h3><div id="q-text" style="font-size:1.4rem; margin-bottom:30px; color:#fff;">問卷載入中...</div><div id="q-opts"></div></div>
+            <div id="quiz-q-container"><h3 id="q-title" style="color:var(--gold); margin-bottom:25px;">風格小測驗 (1/7)</h3><div id="q-text" style="font-size:1.4rem; margin-bottom:30px; color:#fff;">載入中...</div><div id="q-opts"></div></div>
             <div id="quiz-result-container" style="display:none;"><h3 style="color:var(--gold);">您的命定風格是</h3><h2 id="res-style" style="font-size:2.5rem; margin:25px 0; color:#fff;">風格名稱</h2><button class="submit-btn" style="width:auto; padding:0 50px;" onclick="applyToForm()">將此風格帶入預約</button></div>
         </div>
     </div>
@@ -314,7 +299,7 @@
     <audio id="bgMusic" loop="" src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3"></audio>
     <div id="music-btn">🎵</div>
     <div id="line-fab" onclick="openLine()"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="Line" style="width:100%;"></div>
-    <div id="toast">表單已成功送出！設計師會盡快聯絡。</div>
+    <div id="toast">表單已成功送出！</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
@@ -323,15 +308,8 @@
         const mBtn = document.getElementById('music-btn');
         let playing = false;
 
-        // 👑 音樂深度防呆機制 👑
-        function pauseMusic() {
-            if (playing) { music.pause(); music.muted = true; mBtn.classList.remove('playing'); playing = false; }
-        }
+        function pauseMusic() { if (playing) { music.pause(); music.muted = true; mBtn.classList.remove('playing'); playing = false; } }
         setInterval(() => { if (document.hidden && playing) pauseMusic(); }, 500);
-        if ('mediaSession' in navigator) {
-            navigator.mediaSession.metadata = new MediaMetadata({ title: 'WJ Space Design BGM' });
-            navigator.mediaSession.setActionHandler('pause', pauseMusic);
-        }
         window.addEventListener('blur', pauseMusic);
         window.addEventListener('pagehide', pauseMusic);
         function openLine() { pauseMusic(); window.open('https://line.me/ti/p/onSlhA-t0x', '_blank'); }
@@ -354,7 +332,6 @@
             update();
         });
 
-        // 打字機效果
         document.querySelectorAll('.faq-btn').forEach(btn => {
             btn.onclick = () => {
                 const item = btn.parentElement;
@@ -373,10 +350,10 @@
             { q: "週末午後放鬆，您最偏好哪種情境？", opts: ["窩在沙發享受陽光與熱茶", "在簡潔的中島吧台品嚐黑咖啡", "在寧靜角落打坐閱讀", "邀友喝精釀啤酒聽音樂"], res: ["北歐暖木", "現代極簡", "日式侘寂", "個性工業"] },
             { q: "您對空間色調的第一直覺是？", opts: ["米白與溫柔奶茶色", "黑、白、深灰無彩色", "復古磚紅與水泥色", "莫蘭迪灰與大理石"], res: ["韓系奶油", "現代極簡", "摩登復古", "法式輕奢"] },
             { q: "若挑選一件重點家具，您會選？", opts: ["蓬鬆柔軟的大布沙發", "具設計感的幾何單椅", "具禪意的枯枝花藝", "黃銅質感的造型吊燈"], res: ["北歐暖木", "現代極簡", "日式侘寂", "法式輕奢"] },
-            { q: "您希望收納空間如何規劃？", opts: ["實用整齊的系統櫃", "隱藏得一點都看不見", "開放式陳列收藏", "帶有線條感的門片"], res: ["北歐暖木", "現代極簡", "個性工業", "法式輕奢"] },
-            { q: "對於牆面材質，您最偏好？", opts: ["溫潤特殊塗料", "冷冽清水模或紅磚", "細緻大理石或金屬", "自然實木拼接"], res: ["韓系奶油", "個性工業", "現代奢華", "北歐暖木"] },
-            { q: "燈光氛圍對您來說？", opts: ["明亮自然的採光", "神祕個性的重點光", "優雅水晶吊燈光", "溫馨暖光落地燈"], res: ["現代極簡", "個性工業", "法式輕奢", "北歐暖木"] },
-            { q: "夢想居家感覺是？", opts: ["像藝廊純淨", "咖啡廳放鬆", "像飯店精緻大器", "森林充滿生機"], res: ["現代極簡", "北歐暖木", "現代奢華", "日式侘寂"] }
+            { q: "您希望收納空間如何規劃？", opts: ["實用整齊的系統櫃", "隱藏得一點都看不見", "開放式陳列收藏", "線條感門片"], res: ["北歐暖木", "現代極簡", "個性工業", "法式輕奢"] },
+            { q: "對於牆面材質，您最偏好？", opts: ["溫潤特殊塗料", "冷冽清水模", "自然實木拼接", "細緻大理石"], res: ["韓系奶油", "個性工業", "北歐暖木", "現代奢華"] },
+            { q: "燈光氛圍對您來說？", opts: ["明亮自然的採光", "神祕個性的重點光", "優雅的水晶吊燈光", "溫馨的暖光落地燈"], res: ["現代極簡", "個性工業", "法式輕奢", "北歐暖木"] },
+            { q: "夢想居家感覺是？", opts: ["像藝廊純淨", "咖啡廳放鬆", "像飯店精緻大器", "生機森林"], res: ["現代極簡", "北歐暖木", "現代奢華", "日式侘寂"] }
         ];
         let curQ = 0; let styleScores = {};
         function openQuiz() { document.getElementById('quizModal').style.display='flex'; curQ=0; styleScores={}; showQ(); }
@@ -402,16 +379,56 @@
             closeQuiz(); document.getElementById('contact').scrollIntoView();
         }
 
-        // Web3Forms AJAX
+        // 👑 真正的 Web3Forms AJAX 發送邏輯（含空表單防禦 & 次數限制） 👑
         document.getElementById('consultForm').onsubmit = function(e) {
             e.preventDefault();
-            const btn = document.getElementById('submitBtn'); btn.disabled = true; btn.innerText = '發送中...';
+
+            // 防禦 1: 檢查原生 HTML 必填驗證
+            if (!this.checkValidity()) {
+                this.reportValidity(); // 彈出瀏覽器預設提示（如：請填寫此欄位）
+                return;
+            }
+
+            // 防禦 2: 嚴格限制每人每日 3 次
+            const today = new Date().toISOString().split('T')[0];
+            let submitRecord = JSON.parse(localStorage.getItem('wj_form_limit') || '{"date":"","count":0}');
+            
+            // 如果日期不同，重置計數
+            if (submitRecord.date !== today) {
+                submitRecord = { date: today, count: 0 };
+            }
+
+            // 檢查次數
+            if (submitRecord.count >= 3) {
+                alert('您今日的預約次數已達上限（3次）。如需緊急諮詢，請直接透過 LINE 聯絡，謝謝您的體諒！');
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true; 
+            btn.innerText = '用心加密發送中...';
+
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(Object.fromEntries(new FormData(this)))
-            }).then(r => { if(r.status==200){ document.getElementById('toast').classList.add('show'); setTimeout(()=>document.getElementById('toast').classList.remove('show'), 4000); this.reset(); } })
-            .finally(()=> { btn.disabled = false; btn.innerText = '確認送出正式表單'; });
+            }).then(r => { 
+                if(r.status == 200){ 
+                    // 發送成功，紀錄計數
+                    submitRecord.count += 1;
+                    localStorage.setItem('wj_form_limit', JSON.stringify(submitRecord));
+                    
+                    document.getElementById('toast').classList.add('show'); 
+                    setTimeout(() => document.getElementById('toast').classList.remove('show'), 4000); 
+                    this.reset(); 
+                } else {
+                    alert('發送暫時失敗，請檢查網路狀態或直接透過 Line 聯繫。');
+                }
+            })
+            .finally(() => { 
+                btn.disabled = false; 
+                btn.innerText = '確認送出正式表單'; 
+            });
         };
 
         const cursor = document.getElementById('cursor');
